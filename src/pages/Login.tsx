@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { data, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import InputField from "../components/InputField";
 import PasswordField from "../components/PasswordField";
 import SubmitButton from "../components/SubmitButton";
