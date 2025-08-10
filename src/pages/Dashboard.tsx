@@ -148,11 +148,11 @@ const Dashboard: React.FC = () => {
 
           <div style={{
             display: "flex",
-            overflowX: "auto",
+            overflowX: "hidden",
             gap: "20px",
             paddingBottom: "10px"
           }}>
-            {posts.map((post) => (
+            {posts.slice(0, 2).map((post) => (
               <div key={post.id} style={{
                 minWidth: "300px",
                 background: "#fff",
@@ -200,11 +200,11 @@ const Dashboard: React.FC = () => {
 
           <div style={{
             display: "flex",
-            overflowX: "auto",
+            overflowX: "hidden",
             gap: "20px",
             paddingBottom: "10px"
           }}>
-            {posts.map((post) => (
+            {posts.slice(0, 2).map((post) => (
               <div key={post.id} style={{ minWidth: "300px", background: "#fff", borderRadius: "12px", border: "1px solid #ddd", padding: "20px", boxShadow: "0 2px 8px rgba(0,0,0,0.05)", flexShrink: 0 }}>
                 <small style={{ fontSize: "13px", color: "#888" }}>{new Date(post.created_at).toLocaleString()}</small>
                 <div style={{ height: "120px", backgroundColor: "#dbeaf2", borderRadius: "8px", margin: "12px 0" }} />
