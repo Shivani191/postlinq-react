@@ -19,6 +19,7 @@ export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
  // generate a state to store token, will be generated from login page, setToken, use props to communicate with other pages
   return (
+    <AuthProvider>
     <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <Header toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
 
@@ -26,7 +27,7 @@ export default function App() {
         <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
         <div style={{ flex: 1 }}>
-        <AuthProvider>
+        
         
           <Routes>
           
@@ -40,10 +41,11 @@ export default function App() {
        
             
           </Routes>
-          </AuthProvider>
+          
           <CreatePostFAB />
         </div>
       </div>
     </div>
+    </AuthProvider>
   );
 }

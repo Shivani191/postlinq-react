@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from '../components/AuthContext';
-
-
-
 // 🔑 Type definitions for data consistency
 type Metric = {
     label: string;
@@ -71,8 +68,8 @@ const Dashboard: React.FC = () => {
                 const calculatedMetrics: Metric[] = [
                     { label: "Published Posts", value: allPosts.length },
                     { label: "Scheduled Posts", value: scheduledPosts.length },
-                    { label: "Engagements", value: 98 },
-                    { label: "Likes", value: 34 },
+                    { label: "Engagements", value: 0 },
+                    { label: "Likes", value: 0 },
                 ];
                 
                 setMetrics(calculatedMetrics);
