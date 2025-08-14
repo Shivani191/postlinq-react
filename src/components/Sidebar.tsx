@@ -18,13 +18,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   };
 
   const navItems = [
-    { label: "Dashboard", path: "/dashboard", icon: "/src/assets/dashboard.svg" },
-    { label: "Saved Posts", path: "/saved-posts", icon: "/src/assets/save.svg" },
-    { label: "Scheduled Posts", path: "/scheduled-posts", icon: "/src/assets/schedule.svg" },
-    { label: "Published Posts", path: "/published-posts", icon: "/src/assets/publish.svg" },
+    { label: "Dashboard", path: "/dashboard", icon: "/assets/dashboard.svg" },
+    { label: "Saved Posts", path: "/saved-posts", icon: "/assets/save.svg" },
+    { label: "Scheduled Posts", path: "/scheduled-posts", icon: "/assets/schedule.svg" },
+    { label: "Published Posts", path: "/published-posts", icon: "/assets/publish.svg" },
     //{ label: "Notes", path: "/saved-posts", icon: "/src/assets/notes.svg" },
-    { label: "Settings", path: "/settings", icon: "/src/assets/settings.svg" },
-    { label: "Help", path: "/help", icon: "/src/assets/help.svg" },
+    { label: "Settings", path: "/settings", icon: "/assets/settings.svg" },
+    { label: "Help", path: "/help", icon: "/assets/help.svg" },
   ];
 
   return (
@@ -81,7 +81,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           paddingBottom: "20px",
         }}
       >
-        <img src="/src/assets/logout.png" alt="Logout" style={{ width: 18, height: 18 }} />
+        <img src="/assets/logout.png" alt="Logout" style={{ width: 18, height: 18 }} />
         <span>Logout</span>
       </button>
       </div>
