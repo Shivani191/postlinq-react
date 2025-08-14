@@ -107,7 +107,8 @@ const CreateAccount: React.FC = () => {
 
       
       <p className="bottom-text">
-        Already have an account? <a href="/login">Login</a>
+        Already have an account? 
+ <span className="link-style" onClick={() => navigate("/login")} style={{ cursor: "pointer", color:"blue" }}><a> Login</a></span>
       </p>
     </form>
   );

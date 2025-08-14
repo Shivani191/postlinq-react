@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext"; // Import useAuth
-import linkedinIcon from "../assets/linkedin.png"; // Make sure you have this icon
+//import linkedinIcon from "public/assets/linkedin.png"; // Make sure you have this icon
 //import LinkedInStatus from "./LinkedInStatus";
 
 interface HeaderProps {
@@ -64,7 +64,7 @@ const buttonColor = linkedInStatus === 'connected' ? '#2ecc71' : '#0A66C2';
           }}
         >
           <img
-            src={linkedinIcon}
+            src="/assets/linkedin.png"
             alt="LinkedIn"
             style={{ width: 24, height: 24,  }} //filter: isHovered ? "invert(1)" : "none"
           />

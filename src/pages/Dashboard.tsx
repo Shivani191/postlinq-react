@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from '../components/AuthContext';
 
 
@@ -21,7 +21,7 @@ type Post = {
 const Dashboard: React.FC = () => {
     // 🔑 Hooks for navigation and global state management
     const navigate = useNavigate();
-    const location = useLocation(); // To access state from navigation
+    
     const { token, logout, userName } = useAuth(); // Access global auth state
 
     // 🔑 State variables to store component data

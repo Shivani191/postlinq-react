@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import eyeOpenIcon from "../assets/eye.png";
-import eyeClosedIcon from "../assets/eyeclose.png";
+//import eyeOpenIcon from "public/assets/eye.png";
+//import eyeClosedIcon from "public/assets/eyeclose.png";
 
 
 interface PasswordFieldProps {
@@ -37,7 +37,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({ label, value, onChange })
       >
         {/* 🔑 Conditionally render the image based on the 'visible' state */}
         <img
-          src={visible ? eyeOpenIcon : eyeClosedIcon}
+          src={visible ? "assets/eye.png" : "assets/eyeclose.png"}
           alt={visible ? "Hide password" : "Show password"}  
           style={{ width: "20px", height: "20px" }}
         />
