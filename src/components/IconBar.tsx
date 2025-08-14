@@ -5,11 +5,11 @@ interface IconBarProps {
 }
 
 const icons = [
-  { src: "/src/assets/back.png", alt: "Back", type: "back" },
-  { src: "/src/assets/edit1.png", alt: "Edit", type: "edit" },
+  { src: "/assets/back.png", alt: "Back", type: "back" },
+  { src: "/assets/edit1.png", alt: "Edit", type: "edit" },
   //{ src: "/src/assets/regen.png", alt: "Regenerate", type: "regenerate" },
-  { src: "/src/assets/save.png", alt: "Save", type: "save" },
-  { src: "/src/assets/schedule.png", alt: "Schedule", type: "schedule" }
+  { src: "/assets/save.png", alt: "Save", type: "save" },
+  { src: "/assets/schedule.png", alt: "Schedule", type: "schedule" }
 ];
 
 const IconBar: React.FC<IconBarProps> = ({ onAction }) => {

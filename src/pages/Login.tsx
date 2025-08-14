@@ -12,7 +12,7 @@ const Login: React.FC = () => {
   const [apiLoading, setApiLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("");
   const navigate = useNavigate();
-  const { setToken } = useAuth();
+  const { setToken, setUserName } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,6 +43,9 @@ const Login: React.FC = () => {
 
       // Store JWT for later use
       setToken(data.token);
+        // 🔑 Extract the user's name and save it
+        const userFirstName = form.email.split("@")[0];
+        setUserName(userFirstName);
 navigate("/dashboard", { state: { firstName: form.email.split("@")[0] } });
 
       } catch (err: any) {
@@ -64,7 +67,7 @@ navigate("/dashboard", { state: { firstName: form.email.split("@")[0] } });
           <p style={{ marginTop: "10px", fontSize: "16px", color: "#333" }}>{loadingMessage}</p>
         </div>
       )}
-      <img src="/src/assets/logo.png" alt="postlinQ Logo" className="logo-image" />
+      <img src="/assets/logo.png" alt="postlinQ Logo" className="logo-image" />
       {error && <div className="error" style={{ color: "red", marginBottom: "12px" }}>{error}</div>}
       <div className="form-control">
       <InputField label="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />

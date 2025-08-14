@@ -75,7 +75,7 @@ const CreateAccount: React.FC = () => {
         </div>
       )}
 
-      <img src="/src/assets/logo.png" alt="postlinQ Logo" className="logo-image" />
+      <img src="/assets/logo.png" alt="postlinQ Logo" className="logo-image" />
 
       {error && <div className="error" style={{ color: "red", marginBottom: "12px" }}>{error}</div>}
 

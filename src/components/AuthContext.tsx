@@ -6,7 +6,9 @@ interface AuthContextType {
   isAuthenticated: boolean;
   logout: () => void;
   linkedInStatus: 'connected' | 'disconnected' | 'checking';
-    setLinkedInStatus: (status: 'connected' | 'disconnected' | 'checking') => void;
+  setLinkedInStatus: (status: 'connected' | 'disconnected' | 'checking') => void;
+  userName: string | null;
+  setUserName: (name: string | null) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -20,9 +22,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [token, setInternalToken] = useState<string | null>(() => {
     return sessionStorage.getItem('jwt_token'); // <--- CHANGE IS HERE
   });
-
+  const [userName, setInternalUserName] = useState<string | null>(() => {
+    return sessionStorage.getItem('user_name');
+  });
   const [linkedInStatus, setLinkedInStatus] = useState<'connected' | 'disconnected' | 'checking'>('disconnected');
-
+  useEffect(() => {
+    if (userName) {
+      sessionStorage.setItem('user_name', userName);
+    } else {
+      sessionStorage.removeItem('user_name');
+    }
+  }, [userName]);
   // Effect to update sessionStorage whenever token changes
   useEffect(() => {
     if (token) {
@@ -36,15 +46,25 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setInternalToken(newToken);
   };
 
+  // 🔑 A new function to set the user's name
+  const setUserName = (name: string | null) => {
+    setInternalUserName(name);
+  };
+
   const logout = () => {
     setInternalToken(null);
+    setInternalUserName(null);
     setLinkedInStatus('disconnected'); 
   };
 
   const isAuthenticated = !!token; // Simple check if token exists
 
   return (
-    <AuthContext.Provider value={{ token, setToken, isAuthenticated, logout, linkedInStatus, setLinkedInStatus }}>
+    <AuthContext.Provider 
+    value={{ token, setToken, 
+      isAuthenticated, logout, 
+      linkedInStatus, setLinkedInStatus, 
+      userName, setUserName }}>
       {children}
     </AuthContext.Provider>
   );

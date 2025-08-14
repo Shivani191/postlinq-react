@@ -34,13 +34,13 @@ const buttonColor = linkedInStatus === 'connected' ? '#2ecc71' : '#0A66C2';
       <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
 
         <img
-          src="/src/assets/menu.svg"
+          src="/assets/menu.svg"
           alt="Menu"
           style={{ height: 34, cursor: "pointer" }}
           onClick={toggleSidebar}
         />
         <img
-          src="/src/assets/logo.png"
+          src="/assets/logo.png"
           alt="Logo"
           style={{ height: 30, cursor: "pointer" }}
           onClick={() => navigate("/dashboard")}
@@ -76,8 +76,8 @@ const buttonColor = linkedInStatus === 'connected' ? '#2ecc71' : '#0A66C2';
         </div>
 
 
-        <img src="/src/assets/notification.png" alt="Notifications" style={{ width: 24, height: 24 }} />
-        <img src="/src/assets/user.png" alt="User" style={{ width: 24, height: 24 }} />
+        <img src="/assets/notification.png" alt="Notifications" style={{ width: 24, height: 24 }} />
+        <img src="/assets/user.png" alt="User" style={{ width: 24, height: 24 }} />
       </div>
     </header>
   );

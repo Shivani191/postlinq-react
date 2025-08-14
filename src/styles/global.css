@@ -148,20 +148,30 @@ body {
     align-items: center;
     gap: 20px;
   }
+
+  .metric-cards-container {
+    display: flex; /* 🔑 This should be on the parent */
+    flex-wrap: wrap; /* 🔑 And this */
+    gap: 20px;
+}
   
   .metric-cards {
     display: flex;
+    flex-wrap: wrap; /* 🔑 Add this to allow cards to move to the next row */
     gap: 20px;
     margin: 30px 0;
+    justify-content: center; /* You can use this to center the cards if needed */
   }
   
   .metric-card {
-    flex: 1;
+    flex: 1 1 200px; /* 🔑 This allows cards to shrink but not below 200px */
     background: #fff;
     padding: 20px;
     border: 1px solid #dedede;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    align-items: stretch;
+
   }
   
   .section-title {
@@ -175,6 +185,8 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    align-items: stretch;
+    flex-direction: column
   }
   
   .post-box {
@@ -411,12 +423,33 @@ input:checked + .slider:before {
 }
 
 .post-card {
+  flex: 1 1 300px;
   background: #fff;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   width: 260px;
   border: 1px solid #e2e2e2;
+  /*flex-direction: column;  Allows content inside to be flexible */
+  
+}
+.section-header {
+  display: flex;
+  justify-content: space-between; /* 🔑 Aligns children to start and end */
+  align-items: center;
+  margin-bottom: 16px;
+}
+.main-content-wrapper {
+  /* max-width: 1100px; Adjust this to your desired max width */
+  margin: 0 auto; /* This centers the content */
+  padding: 0 40px; /* Adds padding on the sides for smaller screens */
+  box-sizing: border-box;
+}
+
+.posts-list {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
 }
 
 .post-time {

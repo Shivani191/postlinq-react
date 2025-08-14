@@ -33,7 +33,7 @@ const CreatePostFAB: React.FC = () => {
       }}
     >
       <img
-        src="/src/assets/plus.png"  
+        src="/assets/plus.png"  
         style={{
           width: "24px",
           height: "24px",
