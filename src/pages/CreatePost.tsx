@@ -23,6 +23,7 @@ const CreatePost: React.FC = () => {
   const [showTitlePrompt, setShowTitlePrompt] = useState(false);
   const [saveTitle, setSaveTitle] = useState("");
   const [isLinkedInConnected, setIsLinkedInConnected] = useState<boolean | null>(null);
+  const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
 
   const navigate = useNavigate();
   const { token, logout } = useAuth();
@@ -177,14 +178,19 @@ const CreatePost: React.FC = () => {
     <div
       key={index}
       onClick={() => handleSelectStyle(index)}
+      onMouseEnter={() => setHoveredCardIndex(index)}
+      onMouseLeave={() => setHoveredCardIndex(null)}
       style={{
         flex: 1,
-        border: "1px solid #C5C5C5",
-        borderRadius: "10px",
-        padding: "20px",
-        background: "#fff",
-        cursor: "pointer",
-      }}
+        border: hoveredCardIndex === index ? "1px solid #D63649" : "1px solid #C5C5C5",
+      borderRadius: "10px",
+      padding: "20px",
+      background: "#fff",
+      cursor: "pointer",
+      transition: "all 0.2s ease-in-out",
+      boxShadow: hoveredCardIndex === index ? "0 4px 12px rgba(0, 0, 0, 0.1)" : "none",
+      transform: hoveredCardIndex === index ? "translateY(-2px)" : "none",
+    }}
     >
       <p style={{ fontSize: "14px", whiteSpace: "pre-line", color: "#333" }}>{text}</p>
     </div>
