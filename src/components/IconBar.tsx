@@ -1,3 +1,4 @@
+//src/components/IconBar.tsx
 import React from "react";
 
 interface IconBarProps {

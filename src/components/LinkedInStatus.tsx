@@ -1,3 +1,4 @@
+//src/components/LinkedInStatus.tsx
 import React, { useEffect } from 'react';
 import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';

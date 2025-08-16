@@ -1,5 +1,5 @@
+//src/pages/PublishedPosts.tsx
 import React, { useState, useEffect } from "react";
-
 
 
 type Post = {
